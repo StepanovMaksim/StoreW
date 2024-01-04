@@ -1,0 +1,41 @@
+@media (max-width: 480px) {
+  .list {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 481px) {
+  .list {
+    margin-top: 24px;
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
+.section {
+  width: 100%;
+  padding: 22px;
+}
+
+
+.item {
+  width: 220px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.image {
+  width: 250px;
+  height: 230px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
