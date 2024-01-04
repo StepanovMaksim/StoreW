@@ -27,7 +27,7 @@ const Product = (item) => {
   const addToCart = () => {
     dispatch(addItemToCart(item));
   };
-
+  const images1 = [images[1], images[2]]
   return (
     <section className={styles.product}>
       <div className={styles.images}>
@@ -36,7 +36,7 @@ const Product = (item) => {
           style={{ backgroundImage: `url(${currentImage})` }}
         />
         <div className={styles["images-list"]}>
-          {images.map((image, i) => (
+          {images1.map((image, i) => (
             <div
               key={i}
               className={styles.image}
