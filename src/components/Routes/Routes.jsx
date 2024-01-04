@@ -10,13 +10,13 @@ import SingleCategory from "../Categories/SingleCategory";
 import Cart from "../Cart/Cart";
 
 const AppRoutes = () => (
-  <Routes>
-    <Route index element={<Home />} />
-    <Route path={ROUTES.PRODUCT} element={<SingleProduct />} />
-    <Route path={ROUTES.PROFILE} element={<Profile />} />
-    <Route path={ROUTES.CATEGORY} element={<SingleCategory />} />
-    <Route path={ROUTES.CART} element={<Cart />} />
-  </Routes>
-);
+	<Routes>
+		<Route path={ROUTES.HOME} element={<Home />} />
+		<Route path={ROUTES.PRODUCT} element={<SingleProduct />} />
+		<Route path={ROUTES.PROFILE} element={<Profile />} />
+		<Route path={ROUTES.CATEGORY} element={<SingleCategory />} />
+		<Route path={ROUTES.CART} element={<Cart />} />
+	</Routes>
+)
 
 export default AppRoutes;
