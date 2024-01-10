@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "../../styles/Home.module.css";
 
-import BG from "../../images/banner2.png";
+import BG from "../../images/Alpha.png";
 
 const Poster1 = () => (
   <section className={styles.home}>
@@ -14,7 +14,7 @@ const Poster1 = () => (
         <button className={styles.button}>Shop Now</button>
       </div>
       <div className={styles.image}>
-        <img src={BG} style={{width: '500px'}} alt="" />
+        <img src={BG} alt="" />
       </div>
     </div>
   </section>
