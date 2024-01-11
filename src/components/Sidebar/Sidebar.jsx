@@ -99,7 +99,7 @@ const Sidebar = () => {
                 className={({ isActive }) =>
                   `${styles.link} ${isActive ? styles.active : ""}`
                 }
-                to={`/categories/${id}`}
+                to={`/categories/${id+1}`}
               >
                 <IconAll num={id} />
                 <div className={styles.name}>{name}</div>

@@ -19,7 +19,7 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const { currentUser, cart } = useSelector(({ user }) => user);
 
-  const [values, setValues] = useState({ name: "Гость", avatar: AVATAR });
+  const [values, setValues] = useState({ name: "User", avatar: AVATAR });
 
   const { data, isLoading } = useGetProductsQuery({ title: searchValue });
 
@@ -84,7 +84,7 @@ const Header = () => {
         <input
           type="search"
           name="search"
-          placeholder="Поиск товаров ..."
+          placeholder="Search..."
           autoComplete="off"
           onChange={handleSearch}
           value={searchValue}

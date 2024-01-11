@@ -11,6 +11,7 @@
   .home {
     position: relative;
     flex-grow: 1;
+    width: 500px;
   }
   .banner {
     display: flex;
@@ -20,11 +21,14 @@
 }
 
 
-
+h2 {
+  user-select: none;
+}
 
 .title {
+  user-select: none;
   font-weight: 900;
-  font-size: 119px;
+  font-size: 80px;
   line-height: 145px;
   text-transform: uppercase;
   color: var(--bg);
@@ -139,4 +143,28 @@
 .discount span {
   color: var(--violet);
   font-weight: 700;
+}
+
+
+
+.changeRight {
+  position: absolute;
+  top: 150px;
+  left: -15px;
+  cursor: pointer;
+  width: 40px;
+  transition: 0.3s;
+}
+.changeLeft {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  cursor: pointer;
+  width: 40px;
+  transition: 0.3s;
+}
+
+.changeRight:hover, .changeLeft:hover {
+  scale: 1.2;
+  right: 64px;
 }

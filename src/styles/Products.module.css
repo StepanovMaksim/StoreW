@@ -1,6 +1,6 @@
 .products {
   width: 100%;
-  padding: 25px 22px;
+  padding: 20px;
 }
 
 .list {
@@ -16,6 +16,10 @@
   border-radius: 8px;
   overflow: hidden;
   width: 220px;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -28,10 +32,11 @@
 }
 
 .wrapper {
-  padding: 12px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 110px;
+  padding: 0 5px;
 }
 
 .title {
@@ -53,13 +58,12 @@
 .info {
   margin-top: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
 .prices {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   column-gap: 5px;
 }
 
@@ -68,8 +72,6 @@
   font-size: 20px;
   line-height: 24px;
   color: var(--violet-dark);
-  position: relative;
-  bottom: -10px;
 }
 
 .oldPrice {
