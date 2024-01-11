@@ -23,6 +23,7 @@ const Home = () => {
 
   return (
     <>
+      <Poster />
       <Products products={list} amount={5} title="Trending" />
       <Categories products={categories.list} amount={5} title="Worth seeing" />
       <Banner />
