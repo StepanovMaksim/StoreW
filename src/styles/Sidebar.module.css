@@ -1,3 +1,25 @@
+@media (max-width: 480px) {
+  .allComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+  }
+}
+
+
+@media (min-width: 481px) {
+  .allComponent {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    column-gap: 20px;
+
+  }
+}
+
+
+
 .sidebar {
   width: 304px;
   padding: 24px;

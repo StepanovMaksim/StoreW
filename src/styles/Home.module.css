@@ -1,9 +1,43 @@
 @media (max-width: 480px) {
   .home {
-    display: none;
+    position: relative;
+    flex-grow: 1;
+    width: 300px;
+    height: 1%;
   }
   .banner {
-    display: none;
+    display: flex;
+    width: 100%;
+    scale: 0.2;
+  }
+  .product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: 2s show ease;
+    scale: 0.8;
+  }
+
+  .title {
+    padding-top: 20px;
+    user-select: none;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: var(--bg);
+    text-align: center;
+  }
+  .image img {
+    position: absolute;
+    bottom: 5%;
+    right: -10%;
+    max-width: unset;
+  }
+
+  .changeRight:active, .changeLeft:active {
+    scale: 0.9;
+    right: 44px;
   }
 }
 
@@ -18,6 +52,34 @@
     width: 100%;
     height: 570px;
   }
+  .product {
+    position: relative;
+    padding-left: 42px;
+    display: flex;
+    align-items: stretch;
+    margin-top: 9px;
+    animation: 2s show ease;
+  }
+
+  .title {
+    user-select: none;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 145px;
+    text-transform: uppercase;
+    color: var(--bg);
+    text-align: center;
+  }
+  .image img {
+    position: absolute;
+    bottom: -15%;
+    right: 10%;
+    max-width: unset;
+  }
+  .changeRight:hover, .changeLeft:hover {
+    scale: 1.2;
+    right: 64px;
+  }
 }
 
 
@@ -25,29 +87,12 @@ h2 {
   user-select: none;
 }
 
-.title {
-  user-select: none;
-  font-weight: 900;
-  font-size: 80px;
-  line-height: 145px;
-  text-transform: uppercase;
-  color: var(--bg);
-  text-align: center;
-}
 
 @keyframes show {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-.product {
-  position: relative;
-  padding-left: 42px;
-  display: flex;
-  align-items: stretch;
-  margin-top: 9px;
-  animation: 2s show ease;
-}
 
 .subtitle {
   line-height: 20px;
@@ -71,12 +116,7 @@ h2 {
   height: 220px;
 }
 
-.image img {
-  position: absolute;
-  bottom: -15%;
-  right: 10%;
-  max-width: unset;
-}
+
 
 .left {
   width: 50%;
@@ -170,7 +210,3 @@ h2 {
   transition: 0.3s;
 }
 
-.changeRight:hover, .changeLeft:hover {
-  scale: 1.2;
-  right: 64px;
-}
