@@ -35,12 +35,18 @@ h2 {
   text-align: center;
 }
 
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .product {
   position: relative;
   padding-left: 42px;
   display: flex;
   align-items: stretch;
   margin-top: 9px;
+  animation: 2s show ease;
 }
 
 .subtitle {
