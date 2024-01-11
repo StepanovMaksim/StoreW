@@ -9,20 +9,23 @@
 .title {
   font-weight: 600;
   line-height: 20px;
+  font-size: 22px;
 }
 
 .menu {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 15px;
 }
 
 .link {
   color: var(--dark-sea);
-  font-size: 18px;
+  font-size: 22px;
   line-height: 17px;
   text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
 }
 
 .link:hover {
@@ -36,5 +39,24 @@
 .footer {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--dark-sea);
+}
+
+.socials svg:hover {
+  fill: var(--violet);
+}
+
+.name {
+  padding: 3px 0 0 6px;
 }
