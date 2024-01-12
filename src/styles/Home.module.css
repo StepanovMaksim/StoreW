@@ -37,7 +37,7 @@
 
   .changeRight:active, .changeLeft:active {
     scale: 0.9;
-    right: 44px;
+
   }
 }
 
@@ -78,20 +78,15 @@
   }
   .changeRight:hover, .changeLeft:hover {
     scale: 1.2;
-    right: 64px;
   }
 }
+
 
 
 h2 {
   user-select: none;
 }
 
-
-@keyframes show {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
 
 .subtitle {
@@ -114,7 +109,10 @@ h2 {
   position: relative;
   flex-grow: 1;
   height: 220px;
+  animation: 1s fade;
 }
+
+
 
 
 
@@ -169,6 +167,10 @@ h2 {
   margin-top: 27px;
 }
 
+.text {
+  animation: 1s match;
+}
+
 .right {
   width: 50%;
   position: relative;
@@ -196,17 +198,31 @@ h2 {
 .changeRight {
   position: absolute;
   top: 150px;
-  left: -15px;
+  left: -20px;
   cursor: pointer;
-  width: 40px;
   transition: 0.3s;
+  z-index: 100;
 }
 .changeLeft {
   position: absolute;
   top: 150px;
-  right: 50px;
+  right: -10px;
   cursor: pointer;
   width: 40px;
   transition: 0.3s;
 }
 
+@keyframes match{
+  from {scale: 0.4}
+  to { scale: 1;}
+}
+
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}  
+
+@keyframes fade {
+  from { left: 100px; }
+  to { left: 0px; }
+}
