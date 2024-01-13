@@ -11,6 +11,7 @@ import AVATAR from "../../images/avatar.jpg";
 
 import { toggleForm } from "../../features/user/userSlice";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
+import { sidebarFunk, sidebarOpen } from "../../features/products/productsSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -39,85 +40,84 @@ const Header = () => {
   };
 
   return (
-    <>
-    <div className={styles.header}>
-      <div className={styles.logo}>
-        <Link to={ROUTES.HOME}>
-          Site Home
-        </Link>
-      </div>
-      <div className={styles.account}>
-          <Link to={ROUTES.HOME} className={styles.favourites}>
-            <svg className={styles["icon-fav"]}>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
-            </svg>
-          </Link>
+		<>
+			<div
+				className={styles.header}
+				onClick={() => dispatch(sidebarOpen())}
+			>
+				<div className={styles.logo}>
+					<Link to={ROUTES.HOME}>Site Home</Link>
+				</div>
+				<div className={styles.account}>
+					<Link to={ROUTES.HOME} className={styles.favourites}>
+						<svg className={styles['icon-fav']}>
+							<use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
+						</svg>
+					</Link>
 
-          <Link to={ROUTES.CART} className={styles.cart}>
-            <svg className={styles["icon-cart"]}>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
-            </svg>
-            {!!cart.length && (
-              <span className={styles.count}>{cart.length}</span>
-            )}
-          </Link>
-        </div>
-      <div className={styles.info}>
-        
-      </div>
-      <div className={styles.user} onClick={handleClick}>
-        <div
-          className={styles.avatar}
-          style={{ backgroundImage: `url(${values.avatar})` }}
-        />
-        <div className={styles.username}>{values.name}</div>
-      </div>
-    </div>
+					<Link to={ROUTES.CART} className={styles.cart}>
+						<svg className={styles['icon-cart']}>
+							<use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
+						</svg>
+						{!!cart.length && (
+							<span className={styles.count}>{cart.length}</span>
+						)}
+					</Link>
+				</div>
+				<div className={styles.info}></div>
+				<div className={styles.user} onClick={handleClick}>
+					<div
+						className={styles.avatar}
+						style={{ backgroundImage: `url(${values.avatar})` }}
+					/>
+					<div className={styles.username}>{values.name}</div>
+				</div>
+			</div>
 
-    <form className={styles.form}>
-      <div className={styles.icon}>
-        <svg className="icon">
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`} />
-        </svg>
-      </div>
-      <div className={styles.input}>
-        <input
-          type="search"
-          name="search"
-          placeholder="Search..."
-          autoComplete="off"
-          onChange={handleSearch}
-          value={searchValue}
-        />
-      </div>
+			<form className={styles.form}>
+				<div className={styles.icon}>
+					<svg className='icon'>
+						<use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`} />
+					</svg>
+				</div>
+				<div className={styles.input}>
+					<input
+						type='search'
+						name='search'
+						placeholder='Search...'
+						autoComplete='off'
+						onChange={handleSearch}
+						value={searchValue}
+					/>
+				</div>
 
-      {searchValue && (
-        <div className={styles.box}>
-          {isLoading
-            ? "Loading"
-            : !data.length
-            ? "No results"
-            : data.map(({ title, images, id }) => {
-                return (
-                  <Link
-                    key={id}
-                    onClick={() => setSearchValue("")}
-                    className={styles.item}
-                    to={`/products/${id}`}
-                  >
-                    <div
-                      className={styles.image}
-                      style={{ backgroundImage: `url(${images[0]})` }}
-                    />
-                    <div className={styles.title}>{title}</div>
-                  </Link>
-                );
-              })}
-        </div>
-      )}
-  </form>
-  </>
-  );
+				{searchValue && (
+					<div className={styles.box}>
+						{isLoading
+							? 'Loading'
+							: !data.length
+							? 'No results'
+							: data.map(({ title, images, id }) => {
+									return (
+										<Link
+											key={id}
+											onClick={() => setSearchValue('')}
+											className={styles.item}
+											to={`/products/${id}`}
+										>
+											<div
+												className={styles.image}
+												style={{ backgroundImage: `url(${images[0]})` }}
+											/>
+											<div className={styles.title}>{title}</div>
+										</Link>
+									)
+							  })}
+					</div>
+				)}
+			</form>
+		</>
+	)
 };
 
 export default Header;

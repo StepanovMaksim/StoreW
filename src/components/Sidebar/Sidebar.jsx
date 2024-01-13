@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import styles from "../../styles/Sidebar.module.css";
+import Poster from "../Poster/Poster";
 
 
 const IconClothes = () => (
@@ -86,36 +87,40 @@ const Sidebar = () => {
 
 
   return (
-    
-    
-    <section className={styles.sidebar}>
-      
-      <div className={styles.title}>CATEGORIES</div>
-      <nav>
-        <ul className={styles.menu}>
-          {catRus.map(( name, id ) => (
-            <li key={id} >
-              <NavLink
-                className={({ isActive }) =>
-                  `${styles.link} ${isActive ? styles.active : ""}`
-                }
-                to={`/categories/${id+1}`}
-              >
-                <IconAll num={id} />
-                <div className={styles.name}>{name}</div>
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className={styles.footer}>
-        <a href="/help" target="_blank" className={styles.link} style={{ textDecoration: "underline" }}>
-          Help
-          
-        </a>
-      </div>
-    </section>
-  );
+		<div className={styles.allComponent}>
+			<Poster />
+			<section className={styles.sidebar}>
+				<div className={styles.title}>CATEGORIES</div>
+				<nav>
+					<ul className={styles.menu}>
+						{catRus.map((name, id) => (
+							<li key={id}>
+								<NavLink
+									className={({ isActive }) =>
+										`${styles.link} ${isActive ? styles.active : ''}`
+									}
+									to={`/categories/${id + 1}`}
+								>
+									<IconAll num={id} />
+									<div className={styles.name}>{name}</div>
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</nav>
+				<div className={styles.footer}>
+					<a
+						href='/help'
+						target='_blank'
+						className={styles.link}
+						style={{ textDecoration: 'underline' }}
+					>
+						Help
+					</a>
+				</div>
+			</section>
+		</div>
+	)
 };
 
 export default Sidebar;

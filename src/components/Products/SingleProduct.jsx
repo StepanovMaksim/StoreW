@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { sidebarFunk } from '../../features/products/productsSlice'
 
 import { useGetProductQuery } from "../../features/api/apiSlice";
 import { getRelatedProducts } from "../../features/products/productsSlice";
@@ -14,7 +15,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const navigate = useNavigate();
-  const { list, related } = useSelector(({ products }) => products);
+  const { list, related, sideBar } = useSelector(({ products }) => products);
 
   const { data, isLoading, isFetching, isSuccess } = useGetProductQuery({ id });
 
@@ -31,13 +32,14 @@ const SingleProduct = () => {
     dispatch(getRelatedProducts(data.category.id));
   }, [data, dispatch, list.length]);
 
+ 
   return !data ? (
     <section className="preloader">Loading...</section>
   ) : (
     <>
       <Product {...data} />
       <Products products={related} amount={5} title="Related products" />
-    </>
+      </>
   );
 };
 
