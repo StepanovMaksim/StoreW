@@ -11,7 +11,7 @@ import AVATAR from "../../images/avatar.jpg";
 
 import { toggleForm } from "../../features/user/userSlice";
 import { useGetProductsQuery } from "../../features/api/apiSlice";
-import { sidebarFunk, sidebarOpen } from "../../features/products/productsSlice";
+import { sidebarClose, sidebarFunk, sidebarOpen } from "../../features/products/productsSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -41,14 +41,11 @@ const Header = () => {
 
   return (
 		<>
-			<div
-				className={styles.header}
-				onClick={() => dispatch(sidebarOpen())}
-			>
-				<div className={styles.logo}>
+			<div className={styles.header}>
+				<div className={styles.logo} onClick={() => dispatch(sidebarOpen())}>
 					<Link to={ROUTES.HOME}>Site Home</Link>
 				</div>
-				<div className={styles.account}>
+				<div className={styles.account} onClick={() => dispatch(sidebarClose())}>
 					<Link to={ROUTES.HOME} className={styles.favourites}>
 						<svg className={styles['icon-fav']}>
 							<use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
