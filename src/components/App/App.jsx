@@ -11,7 +11,18 @@ import { getCategories } from "../../features/categories/categoriesSlice";
 import productsSlice, { getProducts } from "../../features/products/productsSlice";
 
 import UserForm from "../User/UserForm";
+import { useLocation } from "react-router-dom";
 
+
+function ScrollToTop() {
+	const { pathname } = useLocation();
+  
+	useEffect(() => {
+	  window.scrollTo(0, 0);
+	}, [pathname]);
+  
+	return null;
+}
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,13 +34,13 @@ const App = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  ScrollToTop();
   
   return (
 		<div className='app'>
 			<Header />
 			<UserForm />
 			<div className='container'>
-				{sideBar && <Sidebar />}
 				<AppRoutes />
 			</div>
 			<Footer />

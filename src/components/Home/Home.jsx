@@ -7,6 +7,7 @@ import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 import Poster from "../Poster/Poster";
 import Products from "../Products/Products";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <>
+      <Sidebar />
       <Products products={list} amount={5} title="Trending" />
       <Categories products={categories.list} amount={5} title="Worth seeing" />
       <Banner />
